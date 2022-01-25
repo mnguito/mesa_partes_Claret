@@ -1,0 +1,1 @@
+[{"model": "erp.staff", "pk": 1, "fields": {"user": 1, "perfil": 1, "area": 1, "avatar": "avatar/2021/06/24/3223.png", "is_active": "1", "date_joined": "2021-06-24", "date_creation": "2021-06-24T16:49:47.800Z", "date_updated": "2021-06-24T16:49:47.801Z"}}]

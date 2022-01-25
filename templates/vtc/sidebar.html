@@ -1,0 +1,48 @@
+{% load static %}
+<aside class="main-sidebar sidebar-light-primary elevation-4">
+    <a href="{% url 'erp:dashboard' %}" class="brand-link">
+        <img src="{% static 'img/logo.png' %}"
+             alt="AdminLTE Logo"
+             class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light" style="color: rgb(220, 111, 235);"><strong>IntraNet</strong></span>
+    </a>
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.get_image }}" class="img-circle" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{ request.user.get_full_name }}</a>
+            </div>
+        </div>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                <li class="nav-item">
+                    <a class="nav-link {% if 'user/list/' in request.path %}active{% endif %}"
+                       href="{% url 'user:user_list' %}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Usuarios</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if 'tipo_tramite' in request.path %}active{% endif %}"
+                       href="{% url 'erp:tipo_tramite_list' %}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Tipo Trámite</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if '/tramite' in request.path %}active{% endif %}"
+                       href="{% url 'erp:tramite_list' %}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Trámite</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
